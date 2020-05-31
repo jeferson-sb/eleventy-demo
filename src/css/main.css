@@ -23,7 +23,9 @@ body {
 
 header {
   display: flex;
-  padding: 1.2rem 5rem;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.2rem 0;
 }
 
 a {
@@ -33,18 +35,17 @@ a {
   opacity: 0.9;
   transition: border-bottom 0.5s ease-in-out;
   padding: 2px;
+  border: 2px solid transparent;
 }
 a:focus {
   border: 2px dashed rgb(72, 99, 139);
 }
-
+a:hover {
+  border-bottom: 2px solid rgb(72, 99, 139);
+}
 header a {
   margin: 0 10px;
   text-transform: uppercase;
-  border: 2px solid transparent;
-}
-header a:hover {
-  border-bottom: 2px solid rgb(72, 99, 139);
 }
 
 .container {
@@ -55,4 +56,13 @@ header a:hover {
 
 h1 {
   font-family: var(--font-title);
+}
+
+p {
+  font-size: 1.2rem;
+  opacity: 0.75;
+}
+
+ul {
+  list-style-type: none;
 }

@@ -3,10 +3,6 @@ title: A page for you
 layout: base.njk
 ---
 <style>
-p{
-  font-size: 1.2rem;
-  opacity: .75;
-}
 strong{
   color: #f39c12;
 }
@@ -17,5 +13,13 @@ strong{
   <p>
     JAMstack is a modern architecture to create <strong>fast</strong> and <strong>secure sites</strong> and dynamic apps delivered by <strong>pre-rendering files</strong> and serving them directly from a <strong>CDN</strong>.
   </p>
+  <ul>
+    {% for article in news.articles %}
+      <li>
+        <h4><a href="{{ article.url }}">{{ article.title }}</a></h4>
+        <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 <script src="/js/main.js" defer></script>
