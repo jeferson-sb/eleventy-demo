@@ -1,0 +1,41 @@
+---
+title: Daily breifing
+layout: base.njk
+pagination:
+  data: news
+  size: 1
+  alias: news
+permalink: /{{ news.country }}/index.html
+---
+<style>
+strong{
+  color: #f39c12;
+}
+ul{
+  background-color: #fff;
+  padding: 2em;
+  box-shadow:
+  0 12.5px 10px rgba(0, 0, 0, 0.04),
+  0 100px 80px rgba(0, 0, 0, 0.08)
+  ;
+}
+li h4 a{
+  padding-left: 0;
+}
+</style>
+
+<div class="container">
+  <h1>Global News 🌎</h1>
+  <p>
+    Daily news in {{ news.country }}
+  </p>
+  <ul>
+    {% for article in news.articles %}
+      <li>
+        <h4><a href="{{ article.url }}">{{ article.title }}</a></h4>
+        <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+<script src="/js/main.js" defer></script>
